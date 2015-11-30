@@ -121,8 +121,8 @@ void erreur(){
 
 
 int main(int argc, char **argv){
-	if(argc < 2) // ERROR
-		return 1;
+	if(argc < 3) // ERROR
+		erreur();
 
 	int linkFlag = 0;
 	int definedExpression = 0;
@@ -138,7 +138,7 @@ int main(int argc, char **argv){
 	}
 	path = argv[i];
 	i++;
-	if(i == argc)
+	if(i == argc-1)
 		erreur();
 	while(i < argc){
 		if(argv[i][0] == '-' && !definedExpression){
